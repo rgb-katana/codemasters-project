@@ -1,0 +1,34 @@
+.navbar {
+  padding: 10px 15px;
+  background-color: azure;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  &__brand {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__item {
+  }
+}
+
+.link:visited,
+.link:hover,
+.link {
+  text-decoration: none;
+  color: black;
+}
