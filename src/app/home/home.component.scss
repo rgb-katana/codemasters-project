@@ -1,0 +1,121 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+  white-space: pre-wrap;
+
+  &__details {
+    text-align: justify;
+  }
+}
+
+/* styles.css */
+
+.navbar {
+  &__nav {
+    list-style: none;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  &__item {
+    overflow: hidden;
+  }
+
+  &__link {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-shadow: 3px 4px 5px #000000;
+  }
+
+  &__link::before {
+    content: '';
+    filter: grayscale(60%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
+  &__link:hover {
+    transform: scale(1.1);
+    transition: all 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
+
+  &__link:hover::before {
+    filter: grayscale(20%);
+    transform: scale(1.05);
+    transition: all 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
+
+  &__link[data-image='grammar']::before {
+    background-image: url('../../assets/images/pens.jpg');
+  }
+
+  &__link[data-image='phonetics']::before {
+    background-image: url('../../assets/images/sound.png');
+  }
+
+  &__link[data-image='books']::before {
+    background-image: url('../../assets/images/books.jpg');
+  }
+
+  &__link[data-image='films']::before {
+    background-image: url('../../assets/images/cameras.jpg');
+  }
+}
+
+.section {
+  margin: 0 auto;
+  text-align: justify;
+  white-space: pre-wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__details {
+    &_padding {
+      padding-top: 20px;
+    }
+  }
+
+  &__image {
+    width: 80%;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+  }
+}

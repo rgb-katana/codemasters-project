@@ -1,24 +1,24 @@
 @font-face {
-  font-family: "Open Sans";
-  src: url("./assets/fonts/Open_Sans/OpenSans.ttf") format("truetype");
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/Open_Sans/OpenSans.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
-  --background-color: #f4f8fa; /* Light blue-gray background */
-  --text-color: #333; /* Dark gray text color */
+  --background-color: #f4f8fa;
+  --text-color: #333;
 
-  --header-bg-color: #3498db; /* Blue header background */
-  --header-text-color: #fff; /* White text for the header */
+  --header-bg-color: #3498db;
+  --header-text-color: #fff;
 
-  --nav-bg-color: #ecf0f1; /* Light gray navigation background */
-  --nav-link-color: #3498db; /* Blue link color */
+  --nav-bg-color: #ecf0f1;
+  --nav-link-color: #3498db;
 
   --section-padding: 20px;
 
-  --footer-bg-color: #3498db; /* Blue footer background */
-  --footer-text-color: #fff; /* White text for the footer */
+  --footer-bg-color: #3498db;
+  --footer-text-color: #fff;
   --footer-padding: 10px;
 }
 
@@ -46,7 +46,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   color: var(--text-color);
   background-color: var(--background-color);
 }
@@ -222,9 +222,9 @@ select {
  */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -233,9 +233,9 @@ button,
  */
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -245,9 +245,9 @@ button::-moz-focus-inner,
  */
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -296,8 +296,8 @@ textarea {
  * 2. Remove the padding in IE 10.
  */
 
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -306,8 +306,8 @@ textarea {
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -316,7 +316,7 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -325,7 +325,7 @@ textarea {
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
