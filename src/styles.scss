@@ -5,6 +5,23 @@
   font-style: normal;
 }
 
+:root {
+  --background-color: #f4f8fa; /* Light blue-gray background */
+  --text-color: #333; /* Dark gray text color */
+
+  --header-bg-color: #3498db; /* Blue header background */
+  --header-text-color: #fff; /* White text for the header */
+
+  --nav-bg-color: #ecf0f1; /* Light gray navigation background */
+  --nav-link-color: #3498db; /* Blue link color */
+
+  --section-padding: 20px;
+
+  --footer-bg-color: #3498db; /* Blue footer background */
+  --footer-text-color: #fff; /* White text for the footer */
+  --footer-padding: 10px;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -30,6 +47,8 @@ html {
 body {
   margin: 0;
   font-family: "Open Sans";
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 /**
