@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,10 +10,20 @@ import { GrammarComponent } from './grammar/grammar.component';
 import { PhoneticsComponent } from './phonetics/phonetics.component';
 import { FilmsComponent } from './films/films.component';
 import { BooksComponent } from './books/books.component';
+import { RemoveHyphenPipe } from './shared/remove-hyphen.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MenuComponent, GrammarComponent, PhoneticsComponent, FilmsComponent, BooksComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MenuComponent,
+    GrammarComponent,
+    PhoneticsComponent,
+    FilmsComponent,
+    BooksComponent,
+    RemoveHyphenPipe,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

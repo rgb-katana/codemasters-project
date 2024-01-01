@@ -1,1 +1,8 @@
-<p>grammar works!</p>
+<div class="container">
+  <div *ngIf="tenses" class="tenses">
+    <div class="tenses__tense tense" *ngFor="let tense of tenses">
+      <h3 class="tense__name">{{ tense.path | removeHyphen }}</h3>
+      <img class="tense__img" [src]="tense.image" alt="" />
+    </div>
+  </div>
+</div>
