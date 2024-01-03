@@ -1,8 +1,36 @@
 <div class="container">
-  <div *ngIf="tenses" class="tenses">
-    <div class="tenses__tense tense" *ngFor="let tense of tenses">
-      <h3 class="tense__name">{{ tense.path | removeHyphen }}</h3>
-      <img class="tense__img" [src]="tense.image" alt="" />
-    </div>
+  <section class="section">
+    <h2 class="section__title">Grammar Mastery</h2>
+    <img
+      src="../../assets/images/handwriting.jpg"
+      alt="Grammar image"
+      class="section__image"
+    />
+    <p class="section__details section__details_padding">
+      Dive into our Grammar Mastery section, where we unravel the intricacies of
+      English grammar. From essential tense rules to interactive tests that
+      challenge your understanding, we provide a comprehensive toolkit to
+      elevate your grammatical proficiency. Explore the world of grammar with
+      us, and enhance your language skills with confidence.
+    </p>
+  </section>
+  <div *ngIf="isLoading" class="spinner">
+    <div id="loading"></div>
   </div>
+  <nav *ngIf="tenses" class="tenses">
+    <ul class="tenses__list">
+      <li *ngFor="let tense of tenses">
+        <a class="tenses__tense tense" [routerLink]="tense.path">
+          <h3 class="tense__name">{{ tense.path | removeHyphen }}</h3>
+          <p class="tense__theory">
+            Theory: <span *ngIf="tense.theory; else noTheory"> Available </span
+            ><ng-template #noTheory>Not available</ng-template>
+          </p>
+          <p class="tense__tests">
+            Tests: <span>{{ tense.tests }}</span>
+          </p>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>

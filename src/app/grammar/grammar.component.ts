@@ -10,7 +10,7 @@ import { RemoveHyphenPipe } from '../shared/remove-hyphen.pipe';
   styleUrls: ['./grammar.component.scss'],
 })
 export class GrammarComponent implements OnInit {
-  isLoading: boolean = false;
+  isLoading: boolean = true;
   // tenses: TenseData[] | undefined;
   tenses: any = [];
 
@@ -21,8 +21,8 @@ export class GrammarComponent implements OnInit {
 
     this.grammarService
       .getGrammar()
-      .pipe(map((data) => JSON.parse(data)))
-      .subscribe((tenses) => {
+      .pipe(map(data => JSON.parse(data)))
+      .subscribe(tenses => {
         for (let tense of Object.keys(tenses)) {
           this.tenses.push(tenses[tense]);
         }

@@ -6,10 +6,85 @@
 }
 
 .tenses {
+  padding: 10px 0px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+  }
+
   &__tense {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    border: 2px solid var(--header-bg-color);
+    width: 100%;
+    text-decoration: none;
+    color: var(--header-bg-color);
+    transition: all 0.3s ease;
+  }
+
+  &__tense:hover {
+    border-color: var(--hover-border-color);
+    color: var(--hover-border-color);
+  }
+}
+
+.spinner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tense {
+  &__name {
+    justify-self: start;
+    padding-left: 35px;
+  }
+
+  &__theory,
+  &__tests {
+    &_success {
+      color: var(--success-color);
+    }
+    &_error {
+      color: var(--error-color);
+    }
+  }
+}
+
+.section {
+  margin: 0 auto;
+  text-align: justify;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__details {
+    &_padding {
+      padding-top: 20px;
+    }
+  }
+
+  &_padding-bottom {
+    padding-bottom: 25px;
+  }
+
+  &__image {
+    width: 50%;
+    clip-path: circle(30%) content-box;
+    shape-outside: circle(30%);
+    shape-margin: 15px;
+    float: left;
   }
 }

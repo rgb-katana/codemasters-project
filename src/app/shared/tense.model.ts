@@ -1,6 +1,7 @@
 export interface TenseData {
-  image: string;
+  theory: string;
   path: string;
+  tests: number;
 }
 
 export interface GrammarData {

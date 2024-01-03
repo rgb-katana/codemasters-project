@@ -11,6 +11,8 @@ import { PhoneticsComponent } from './phonetics/phonetics.component';
 import { FilmsComponent } from './films/films.component';
 import { BooksComponent } from './books/books.component';
 import { RemoveHyphenPipe } from './shared/remove-hyphen.pipe';
+import { FooterComponent } from './footer/footer.component';
+import { TenseComponent } from './grammar/tense/tense.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { RemoveHyphenPipe } from './shared/remove-hyphen.pipe';
     FilmsComponent,
     BooksComponent,
     RemoveHyphenPipe,
+    FooterComponent,
+    TenseComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

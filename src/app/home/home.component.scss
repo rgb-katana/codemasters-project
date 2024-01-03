@@ -109,6 +109,10 @@
     }
   }
 
+  &_padding-bottom {
+    padding-bottom: 25px;
+  }
+
   &__image {
     width: 80%;
     clip-path: ellipse(50% 50% at 50% 50%);
