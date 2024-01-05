@@ -15,3 +15,19 @@ export interface GrammarData {
   futureContinuous: TenseData;
   futurePerfect: TenseData;
 }
+
+export interface TensePage {
+  tenseName: string;
+  theory: {
+    overview: string;
+    structure: string;
+    formation: {
+      affirmative: string;
+      negative: string;
+      interrogative: string;
+    };
+    commonSignalWords: string[];
+  };
+  examples: string[];
+  usage: string[];
+}

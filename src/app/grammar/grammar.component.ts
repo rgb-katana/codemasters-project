@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GrammarService } from './grammar.service';
-import { GrammarData, TenseData } from '../shared/tense.model';
-import { map } from 'rxjs';
-import { RemoveHyphenPipe } from '../shared/remove-hyphen.pipe';
+import { TenseData } from '../shared/tense.model';
 
 @Component({
   selector: 'app-grammar',
@@ -11,22 +9,18 @@ import { RemoveHyphenPipe } from '../shared/remove-hyphen.pipe';
 })
 export class GrammarComponent implements OnInit {
   isLoading: boolean = true;
-  // tenses: TenseData[] | undefined;
-  tenses: any = [];
+  tenses: TenseData[] = [];
 
   constructor(private grammarService: GrammarService) {}
 
   ngOnInit(): void {
     this.isLoading = true;
 
-    this.grammarService
-      .getGrammar()
-      .pipe(map(data => JSON.parse(data)))
-      .subscribe(tenses => {
-        for (let tense of Object.keys(tenses)) {
-          this.tenses.push(tenses[tense]);
-        }
-        this.isLoading = false;
-      });
+    this.grammarService.getGrammar().subscribe(tenses => {
+      for (let tense of Object.keys(tenses)) {
+        this.tenses.push(tenses[tense as keyof typeof tenses]);
+      }
+      this.isLoading = false;
+    });
   }
 }

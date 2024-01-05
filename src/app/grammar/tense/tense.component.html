@@ -1,3 +1,56 @@
-<div class="container theory">
-  <h3 class="theory__heading">Header</h3>
+<div class="container">
+  <div *ngIf="isLoading" class="spinner">
+    <div id="loading"></div>
+  </div>
+  <div *ngIf="!isLoading" class="tense">
+    <h2 class="tense__heading">{{ tense.tenseName }}</h2>
+    <section class="tense__section section">
+      <h3 class="section__heading">Tense overview</h3>
+      <p class="section__details">{{ tense.theory.overview }}</p>
+    </section>
+    <section class="tense__section section">
+      <h3 class="section__heading">Structure</h3>
+      <p class="section__details">{{ tense.theory.structure }}</p>
+    </section>
+    <section class="tense__section section">
+      <h3 class="section__heading">Formation</h3>
+      <p class="section__details">
+        Here are general rules for how to form sentences in
+        {{ tense.tenseName }}
+        tense:
+      </p>
+      <ul class="section__list">
+        <li><b>Affirmative:</b> {{ tense.theory.formation.affirmative }}</li>
+        <li><b>Negative:</b> {{ tense.theory.formation.negative }}</li>
+        <li>
+          <b>Interrogative:</b> {{ tense.theory.formation.interrogative }}
+        </li>
+      </ul>
+    </section>
+    <section class="tense__section section">
+      <h3 class="section__heading">Signal Words</h3>
+      <p class="section__details">
+        Some common words that signal for {{ tense.tenseName }} include the
+        following:
+      </p>
+      <ol class="section__list">
+        <li *ngFor="let word of tense.theory.commonSignalWords">{{ word }}</li>
+      </ol>
+    </section>
+    <section class="tense__section section">
+      <h3 class="section__heading">Usage</h3>
+      <p class="section__details">
+        The common scenarios of when we use {{ tense.tenseName }} are:
+      </p>
+      <ul class="section__list">
+        <li *ngFor="let case of tense.usage">{{ case | splitByColon }}</li>
+      </ul>
+    </section>
+    <section class="tense__section section">
+      <h3 class="section__heading">Examples</h3>
+      <ol class="section__list">
+        <li *ngFor="let example of tense.examples">{{ example }}</li>
+      </ol>
+    </section>
+  </div>
 </div>

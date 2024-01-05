@@ -93,6 +93,7 @@
 @supports (clip-path: circle(30%) content-box) {
   .section__image {
     width: 50%;
+    max-height: 190px;
     clip-path: circle(30%) content-box;
     shape-outside: circle(30%);
     shape-margin: 15px;
