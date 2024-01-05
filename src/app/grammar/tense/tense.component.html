@@ -2,8 +2,10 @@
   <div *ngIf="isLoading" class="spinner">
     <div id="loading"></div>
   </div>
-  <div *ngIf="!isLoading" class="tense">
+  <div *ngIf="isError" class="error">There was an error. Try again later.</div>
+  <div *ngIf="!isLoading && !isError" class="tense">
     <h2 class="tense__heading">{{ tense.tenseName }}</h2>
+    <img [src]="tense.image" [alt]="tense.tenseName" class="tense__image" />
     <section class="tense__section section">
       <h3 class="section__heading">Tense overview</h3>
       <p class="section__details">{{ tense.theory.overview }}</p>

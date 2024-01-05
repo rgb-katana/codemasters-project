@@ -18,6 +18,7 @@ export interface GrammarData {
 
 export interface TensePage {
   tenseName: string;
+  image: string;
   theory: {
     overview: string;
     structure: string;

@@ -11,14 +11,10 @@ export class GrammarService {
   constructor(private http: HttpClient) {}
 
   getGrammar() {
-    return this.http
-      .get<GrammarData>(`${BASE_API_URL}/grammar.json`)
-      .pipe(tap(data => console.log(data)));
+    return this.http.get<GrammarData>(`${BASE_API_URL}/grammar.json`);
   }
 
   getTense(tense: string) {
-    return this.http
-      .get<TensePage>(`${BASE_API_URL}/${tense}.json`)
-      .pipe(tap(data => console.log(data)));
+    return this.http.get<TensePage>(`${BASE_API_URL}/${tense}.json`);
   }
 }

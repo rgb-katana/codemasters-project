@@ -10,8 +10,10 @@ import { TensePage } from 'src/app/shared/tense.model';
 })
 export class TenseComponent implements OnInit {
   isLoading: boolean = false;
+  isError: boolean = false;
   tense: TensePage = {
     tenseName: '',
+    image: '',
     theory: {
       overview: '',
       structure: '',
@@ -36,6 +38,9 @@ export class TenseComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.grammarService.getTense(params['tense']).subscribe(data => {
         this.tense = data;
+        if (this.tense.tenseName === '') {
+          this.isError = true;
+        }
         this.isLoading = false;
       });
     });
