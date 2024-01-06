@@ -21,6 +21,10 @@
   &__section {
     text-align: justify;
     line-height: 1.3;
+
+    &_padding {
+      padding-bottom: 25px;
+    }
   }
 
   &__image {

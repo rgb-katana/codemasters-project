@@ -48,11 +48,20 @@
         <li *ngFor="let case of tense.usage">{{ case | splitByColon }}</li>
       </ul>
     </section>
-    <section class="tense__section section">
+    <section
+      class="tense__section section"
+      [ngClass]="tense.tests ? '' : 'tense__section_padding'"
+    >
       <h3 class="section__heading">Examples</h3>
       <ol class="section__list">
         <li *ngFor="let example of tense.examples">{{ example }}</li>
       </ol>
     </section>
+    <div
+      *ngIf="tense.tests"
+      class="section tense__section tense__tests tense__section_padding"
+    >
+      <h3 class="section__heading">Tests</h3>
+    </div>
   </div>
 </div>

@@ -31,4 +31,5 @@ export interface TensePage {
   };
   examples: string[];
   usage: string[];
+  tests: boolean | number[];
 }

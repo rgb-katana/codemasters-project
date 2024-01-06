@@ -24,6 +24,7 @@ export class TenseComponent implements OnInit {
       },
       commonSignalWords: [],
     },
+    tests: false,
     examples: [],
     usage: [],
   };

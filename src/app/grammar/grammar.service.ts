@@ -16,5 +16,6 @@ export class GrammarService {
 
   getTense(tense: string) {
     return this.http.get<TensePage>(`${BASE_API_URL}/${tense}.json`);
+    // .pipe(tap(data => console.log(data)));
   }
 }
