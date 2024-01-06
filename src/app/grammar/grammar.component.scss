@@ -31,11 +31,21 @@
     text-decoration: none;
     color: var(--header-bg-color);
     transition: all 0.3s ease;
+
+    &_unavailable {
+      border: 2px solid var(--grey-color);
+      color: var(--grey-color);
+    }
   }
 
   &__tense:hover {
     border-color: var(--hover-border-color);
     color: var(--hover-border-color);
+  }
+
+  &__tense_unavailable:hover {
+    border: 2px solid var(--grey-color);
+    color: var(--grey-color);
   }
 }
 

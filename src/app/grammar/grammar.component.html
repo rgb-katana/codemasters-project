@@ -20,7 +20,13 @@
   <nav *ngIf="tenses" class="tenses">
     <ul class="tenses__list">
       <li *ngFor="let tense of tenses">
-        <a class="tenses__tense tense" [routerLink]="tense.path">
+        <a
+          class="tenses__tense tense"
+          [routerLink]="tense.path"
+          [ngClass]="
+            !tense.tests && !tense.theory ? 'tenses__tense_unavailable' : ''
+          "
+        >
           <h3 class="tense__name">{{ tense.path | removeHyphen }}</h3>
           <p class="tense__theory">
             Theory: <span *ngIf="tense.theory; else noTheory"> Available </span
