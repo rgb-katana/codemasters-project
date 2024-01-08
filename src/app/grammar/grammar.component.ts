@@ -16,10 +16,11 @@ export class GrammarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
 
-    this.grammarService.getGrammar().subscribe(tenses => {
+    this.grammarService.getGrammar().subscribe((tenses) => {
       for (let tense of Object.keys(tenses)) {
         this.tenses.push(tenses[tense as keyof typeof tenses]);
       }
+      this.tenses.reverse();
       this.isLoading = false;
     });
   }
