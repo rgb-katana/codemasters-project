@@ -5,4 +5,9 @@
   display: flex;
   justify-content: space-between;
   color: var(--footer-bg-color);
+
+  &__legal,
+  &__details {
+    color: var(--text-color);
+  }
 }
