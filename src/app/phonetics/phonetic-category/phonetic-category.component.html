@@ -1,0 +1,30 @@
+<!-- phonetic-category-item.component.html -->
+<ul class="category__list">
+  <li
+    class="category__item"
+    [ngClass]="!isSeen ? 'subcategory' : 'subcategory_active'"
+  >
+    <h3 class="subcategory__title">{{ categoryTitle }}</h3>
+    <ng-container *ngIf="!isSeen">
+      <p class="subcategory__details">There are: {{ itemCount }} items</p>
+      <fa-icon
+        [icon]="faFolderOpen"
+        class="subcategory__icon"
+        (click)="toggleCategory()"
+      ></fa-icon>
+    </ng-container>
+    <ng-container *ngIf="isSeen">
+      <fa-icon
+        [icon]="faFolderClosed"
+        class="subcategory__close"
+        (click)="toggleCategory()"
+      ></fa-icon>
+    </ng-container>
+    <ul class="subcategory__list" *ngIf="isSeen">
+      <li *ngFor="let item of items" class="subcategory__item phoneme">
+        <p class="phoneme__letter">{{ item.symbol }}</p>
+        <p class="phoneme__example">{{ item.example }}</p>
+      </li>
+    </ul>
+  </li>
+</ul>

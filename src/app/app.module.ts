@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TenseComponent } from './grammar/tense/tense.component';
 import { SplitByColonPipe } from './shared/split-by-colon.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PhoneticCategoryComponent } from './phonetics/phonetic-category/phonetic-category.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     TenseComponent,
     SplitByColonPipe,
+    PhoneticCategoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],

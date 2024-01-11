@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhoneticsService } from './phonetics.service';
 import { Phoneme, PhoneticCategory } from '../shared/phonetics.model';
-import {
-  faFolderClosed,
-  faFolderOpen,
-} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-phonetics',
@@ -29,15 +25,6 @@ export class PhoneticsComponent implements OnInit {
   vowelMonophthongs: Phoneme[] = [];
   vowelDiphthongs: Phoneme[] = [];
 
-  isConsonantMonophthongsSeen: boolean = false;
-  isConsonantDiphthongsSeen: boolean = false;
-  isVowelMonophthongsSeen: boolean = false;
-  isVowelDiphthongsSeen: boolean = false;
-
-  // icons
-  faFolderClosed = faFolderClosed;
-  faFolderOpen = faFolderOpen;
-
   constructor(private phoneticsService: PhoneticsService) {}
 
   ngOnInit(): void {
@@ -55,21 +42,5 @@ export class PhoneticsComponent implements OnInit {
     this.consonantDiphthongs = this.consonants.diphthongs;
     this.vowelMonophthongs = this.vowels.monophthongs;
     this.vowelDiphthongs = this.vowels.diphthongs;
-  }
-
-  toggleConsonantMonophthongs() {
-    this.isConsonantMonophthongsSeen = !this.isConsonantMonophthongsSeen;
-  }
-
-  toggleConsonantDiphthongs() {
-    this.isConsonantDiphthongsSeen = !this.isConsonantDiphthongsSeen;
-  }
-
-  toggleVowelMonophthongs() {
-    this.isVowelMonophthongsSeen = !this.isVowelMonophthongsSeen;
-  }
-
-  toggleVowelDiphthongs() {
-    this.isVowelDiphthongsSeen = !this.isVowelDiphthongsSeen;
   }
 }

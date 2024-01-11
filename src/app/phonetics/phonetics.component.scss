@@ -82,7 +82,14 @@
     box-sizing: border-box;
     padding: 15px;
     transition: all 300ms ease-out;
+    width: 100%;
   }
+}
+
+.subcategory_active:hover > .subcategory__close {
+  color: var(--hover-border-color);
+  cursor: pointer;
+  animation: tremble 0.3s ease-in-out infinite;
 }
 
 .subcategory {
@@ -107,13 +114,9 @@
   }
 
   &:hover &__icon {
-    animation: tremble 0.3s ease-in-out infinite;
-  }
-
-  &:hover {
-    border-color: var(--hover-border-color);
     color: var(--hover-border-color);
     cursor: pointer;
+    animation: tremble 0.3s ease-in-out infinite;
   }
 
   &__list {
@@ -139,6 +142,7 @@
     &:hover {
       color: var(--hover-border-color);
       animation: tremble 0.3s ease-in-out infinite;
+      cursor: pointer;
     }
   }
 }
