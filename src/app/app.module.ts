@@ -14,6 +14,7 @@ import { RemoveHyphenPipe } from './shared/remove-hyphen.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { TenseComponent } from './grammar/tense/tense.component';
 import { SplitByColonPipe } from './shared/split-by-colon.pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SplitByColonPipe } from './shared/split-by-colon.pipe';
     TenseComponent,
     SplitByColonPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })

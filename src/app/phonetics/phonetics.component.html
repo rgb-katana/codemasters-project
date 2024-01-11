@@ -1,1 +1,152 @@
-<p>phonetics works!</p>
+<div class="container">
+  <section class="section">
+    <h2 class="section__title">Phonetics Exploration</h2>
+    <img
+      src="../../assets/images/listening.jpg"
+      alt="Grammar image"
+      class="section__image"
+    />
+    <p class="section__details section__details_padding">
+      Dive into our Grammar Mastery section, where we unravel the intricacies of
+      English grammar. From essential tense rules to interactive tests that
+      challenge your understanding, we provide a comprehensive toolkit to
+      elevate your grammatical proficiency. Explore the world of grammar with
+      us, and enhance your language skills with confidence.
+    </p>
+  </section>
+  <div *ngIf="isLoading" class="spinner">
+    <div id="loading"></div>
+  </div>
+  <div *ngIf="!isLoading" class="phonetics">
+    <nav class="phonetics__category category">
+      <h2 class="category__title">Consonants</h2>
+      <ul class="category__list">
+        <li
+          class="category__item"
+          [ngClass]="
+            !isConsonantMonophthongsSeen ? 'subcategory' : 'subcategory_active'
+          "
+          (click)="toggleConsonantMonophthongs()"
+        >
+          <h3 class="subcategory__title">Monophthongs</h3>
+          <ng-container *ngIf="!isConsonantMonophthongsSeen">
+            <p class="subcategory__details">
+              There are: {{ consonantMonophthongs.length }} monophthongs
+            </p>
+            <fa-icon [icon]="faFolderOpen" class="subcategory__icon"></fa-icon>
+          </ng-container>
+          <ng-container *ngIf="isConsonantMonophthongsSeen">
+            <fa-icon
+              [icon]="faFolderClosed"
+              class="subcategory__close"
+            ></fa-icon>
+          </ng-container>
+          <ul class="subcategory__list" *ngIf="isConsonantMonophthongsSeen">
+            <li
+              *ngFor="let phoneme of consonantMonophthongs"
+              class="subcategory__item phoneme"
+            >
+              <p class="phoneme__letter">{{ phoneme.symbol }}</p>
+              <p class="phoneme__example">{{ phoneme.example }}</p>
+            </li>
+          </ul>
+        </li>
+        <li
+          class="category__item"
+          [ngClass]="
+            !isConsonantDiphthongsSeen ? 'subcategory' : 'subcategory_active'
+          "
+          (click)="toggleConsonantDiphthongs()"
+        >
+          <h3 class="subcategory__title">Diphthongs</h3>
+          <ng-container *ngIf="!isConsonantDiphthongsSeen">
+            <p class="subcategory__details">
+              There are: {{ consonantDiphthongs.length }} diphthongs
+            </p>
+            <fa-icon [icon]="faFolderOpen" class="subcategory__icon"></fa-icon>
+          </ng-container>
+          <ng-container *ngIf="isConsonantDiphthongsSeen">
+            <fa-icon
+              [icon]="faFolderClosed"
+              class="subcategory__close"
+            ></fa-icon>
+          </ng-container>
+          <ul class="subcategory__list" *ngIf="isConsonantDiphthongsSeen">
+            <li
+              *ngFor="let phoneme of consonantDiphthongs"
+              class="subcategory__item phoneme"
+            >
+              <p class="phoneme__letter">{{ phoneme.symbol }}</p>
+              <p class="phoneme__example">{{ phoneme.example }}</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <nav class="phonetics__category category">
+      <h2 class="category__title">Vowels</h2>
+      <ul class="category__list">
+        <li
+          class="category__item"
+          [ngClass]="
+            !isVowelMonophthongsSeen ? 'subcategory' : 'subcategory_active'
+          "
+          (click)="toggleVowelMonophthongs()"
+        >
+          <h3 class="subcategory__title">Monophthongs</h3>
+          <ng-container *ngIf="!isVowelMonophthongsSeen">
+            <p class="subcategory__details">
+              There are: {{ vowelMonophthongs.length }} monophthongs
+            </p>
+            <fa-icon [icon]="faFolderOpen" class="subcategory__icon"></fa-icon>
+          </ng-container>
+          <ng-container *ngIf="isVowelMonophthongsSeen">
+            <fa-icon
+              [icon]="faFolderClosed"
+              class="subcategory__close"
+            ></fa-icon>
+          </ng-container>
+          <ul class="subcategory__list" *ngIf="isVowelMonophthongsSeen">
+            <li
+              *ngFor="let phoneme of vowelMonophthongs"
+              class="subcategory__item phoneme"
+            >
+              <p class="phoneme__letter">{{ phoneme.symbol }}</p>
+              <p class="phoneme__example">{{ phoneme.example }}</p>
+            </li>
+          </ul>
+        </li>
+        <li
+          class="category__item"
+          [ngClass]="
+            !isVowelDiphthongsSeen ? 'subcategory' : 'subcategory_active'
+          "
+          (click)="toggleVowelDiphthongs()"
+        >
+          <h3 class="subcategory__title">Diphthongs</h3>
+          <ng-container *ngIf="!isVowelDiphthongsSeen">
+            <p class="subcategory__details">
+              There are: {{ vowelDiphthongs.length }} diphthongs
+            </p>
+            <fa-icon [icon]="faFolderOpen" class="subcategory__icon"></fa-icon>
+          </ng-container>
+          <ng-container *ngIf="isVowelDiphthongsSeen">
+            <fa-icon
+              [icon]="faFolderClosed"
+              class="subcategory__close"
+            ></fa-icon>
+          </ng-container>
+          <ul class="subcategory__list" *ngIf="isVowelDiphthongsSeen">
+            <li
+              *ngFor="let phoneme of vowelDiphthongs"
+              class="subcategory__item phoneme"
+            >
+              <p class="phoneme__letter">{{ phoneme.symbol }}</p>
+              <p class="phoneme__example">{{ phoneme.example }}</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
