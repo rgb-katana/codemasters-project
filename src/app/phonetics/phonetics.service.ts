@@ -13,6 +13,12 @@ export class PhoneticsService {
   getPhonetics() {
     return this.http
       .get<PhoneticAlphabet>(`${BASE_API_URL}/phonetics.json`)
-      .pipe(tap(data => console.log(data)));
+      .pipe(tap((data) => console.log(data)));
+  }
+
+  getPhoneme(phoneme: string) {
+    return this.http
+      .get(`${BASE_API_URL}/${phoneme}.json`)
+      .pipe(tap((data) => console.log(data)));
   }
 }

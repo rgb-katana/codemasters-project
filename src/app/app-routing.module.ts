@@ -6,6 +6,7 @@ import { PhoneticsComponent } from './phonetics/phonetics.component';
 import { BooksComponent } from './books/books.component';
 import { FilmsComponent } from './films/films.component';
 import { TenseComponent } from './grammar/tense/tense.component';
+import { PhonemeComponent } from './phonetics/phoneme/phoneme.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +23,13 @@ const appRoutes: Routes = [
       },
     ],
   },
-  { path: 'phonetics', component: PhoneticsComponent },
+  {
+    path: 'phonetics',
+    children: [
+      { path: '', component: PhoneticsComponent },
+      { path: ':phoneme', component: PhonemeComponent },
+    ],
+  },
   { path: 'books', component: BooksComponent },
   { path: 'films', component: FilmsComponent },
 ];

@@ -21,9 +21,19 @@
       ></fa-icon>
     </ng-container>
     <ul class="subcategory__list" *ngIf="isSeen">
-      <li *ngFor="let item of items" class="subcategory__item phoneme">
-        <p class="phoneme__letter">{{ item.symbol }}</p>
-        <p class="phoneme__example">{{ item.example }}</p>
+      <li
+        *ngFor="let item of items"
+        class="subcategory__item phoneme"
+        [ngClass]="!item.available ? 'phoneme_unavailable' : ''"
+      >
+        <a [routerLink]="item.path" class="phoneme__link">
+          <p class="phoneme__letter">
+            <b>/{{ item.symbol }}/</b>
+          </p>
+          <p class="phoneme__example">
+            <small>{{ item.example }}</small>
+          </p>
+        </a>
       </li>
     </ul>
   </li>

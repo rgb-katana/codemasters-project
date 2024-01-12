@@ -16,6 +16,7 @@ import { TenseComponent } from './grammar/tense/tense.component';
 import { SplitByColonPipe } from './shared/split-by-colon.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PhoneticCategoryComponent } from './phonetics/phonetic-category/phonetic-category.component';
+import { PhonemeComponent } from './phonetics/phoneme/phoneme.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PhoneticCategoryComponent } from './phonetics/phonetic-category/phoneti
     TenseComponent,
     SplitByColonPipe,
     PhoneticCategoryComponent,
+    PhonemeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],

@@ -2,6 +2,7 @@ export interface Phoneme {
   symbol: string;
   path: string;
   example: string;
+  available: boolean;
 }
 
 export interface PhoneticCategory {
