@@ -1,0 +1,39 @@
+<div class="container">
+  <div *ngIf="isLoading" class="spinner">
+    <div id="loading"></div>
+  </div>
+  <div *ngIf="isError" class="error">There was an error. Try again later.</div>
+  <div *ngIf="!isLoading && !isError" class="phoneme">
+    <h2 class="phoneme__heading">
+      <b>/{{ phoneme.symbol }}/</b> sound
+    </h2>
+    <section class="phoneme__section section">
+      <h3 class="section__heading">
+        <a [href]="phoneme.video" class="link">Video</a> about this sound
+      </h3>
+    </section>
+    <section class="phoneme__section section">
+      <h3 class="section__heading">Pronuncitation</h3>
+      <ol class="section__list">
+        <li class="section__item">
+          <p class="section__details">
+            {{ phoneme.pronunciation.description }}
+          </p>
+        </li>
+        <li class="section__item">
+          <p class="section__details">
+            {{ phoneme.pronunciation.instruction }}
+          </p>
+        </li>
+      </ol>
+    </section>
+    <section class="phoneme__section section">
+      <h3 class="section__heading">Examples</h3>
+      <ul class="section__list">
+        <li *ngFor="let exmaple of phoneme.examples" class="section__item">
+          {{ exmaple }}
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>

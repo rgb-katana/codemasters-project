@@ -35,8 +35,8 @@ export class TenseComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isLoading = true;
     this.route.params.subscribe((params: Params) => {
+      this.isLoading = true;
       this.grammarService.getTense(params['tense']).subscribe(data => {
         this.tense = data;
         if (this.tense.tenseName === '') {

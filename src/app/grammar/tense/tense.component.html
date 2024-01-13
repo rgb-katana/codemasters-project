@@ -45,7 +45,9 @@
         The common scenarios of when we use {{ tense.tenseName }} are:
       </p>
       <ul class="section__list">
-        <li *ngFor="let case of tense.usage">{{ case | splitByColon }}</li>
+        <li *ngFor="let case of tense.usage" class="section__item">
+          {{ case | splitByColon }}
+        </li>
       </ul>
     </section>
     <section

@@ -17,6 +17,7 @@ import { SplitByColonPipe } from './shared/split-by-colon.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PhoneticCategoryComponent } from './phonetics/phonetic-category/phonetic-category.component';
 import { PhonemeComponent } from './phonetics/phoneme/phoneme.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,13 @@ import { PhonemeComponent } from './phonetics/phoneme/phoneme.component';
     PhoneticCategoryComponent,
     PhonemeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    YouTubePlayerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
