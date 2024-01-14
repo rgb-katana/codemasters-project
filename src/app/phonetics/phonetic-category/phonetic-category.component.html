@@ -26,7 +26,11 @@
         class="subcategory__item phoneme"
         [ngClass]="!item.available ? 'phoneme_unavailable' : ''"
       >
-        <a [routerLink]="item.path" class="phoneme__link">
+        <a
+          [routerLink]="item.path"
+          class="phoneme__link"
+          [ngClass]="!item.available ? 'phoneme__link_unavailable' : ''"
+        >
           <p class="phoneme__letter">
             <b>/{{ item.symbol }}/</b>
           </p>

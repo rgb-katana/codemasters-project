@@ -8,9 +8,11 @@
       <b>/{{ phoneme.symbol }}/</b> sound
     </h2>
     <section class="phoneme__section section">
-      <h3 class="section__heading">
-        <a [href]="phoneme.video" class="link">Video</a> about this sound
-      </h3>
+      <h3 class="section__heading">Video on how to pronoune this sound</h3>
+      <youtube-player
+        [videoId]="phoneme.video"
+        class="phoneme__video"
+      ></youtube-player>
     </section>
     <section class="phoneme__section section">
       <h3 class="section__heading">Pronuncitation</h3>

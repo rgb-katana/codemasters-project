@@ -24,12 +24,23 @@ export class PhonemeComponent implements OnInit {
     video: '',
   };
 
+  apiLoaded = false;
+
   constructor(
     private route: ActivatedRoute,
     private phoneticsService: PhoneticsService
   ) {}
 
   ngOnInit(): void {
+    if (!this.apiLoaded) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+      this.apiLoaded = true;
+    }
+
+    console.log(this.phoneme.video);
+
     this.route.params.subscribe((params: Params) => {
       this.isLoading = true;
       this.phoneticsService.getPhoneme(params['phoneme']).subscribe(data => {
